@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="category-wrapper">
+  <view class="category-item" data-category="{{ item.mark }}" bindtap="onTapCategory"  wx:for="{{categoryList}}">{{ item.title }}</view>
+</view>
+<view class="top-wrapper">
+  <view class="top-content">
+    <view class="top-title">{{ topLineNew.title }}</view>
+    <text class="top-source">{{ topLineNew.source }}</text>
+    <text class="top-date">{{ topLineNew.date }}</text>
+  </view>
+  <image  class="top-image" src="{{ topLineNew.firstImage }}"></image>
+</view>
+  
+
+<scroll-view scroll-y>
+  <view class="news-list">
+    <view wx:for="{{newsList}}">
+      <view id="{{ item.id }}" bindtap="onTapNewDetail" class="news-item">
+          <view class="news-content">
+              <view class="news-title">{{ item.title }}</view>
+              <text class="news-source">{{ item.source || '央视网'}}</text>
+              <text class="news-date">{{ item.date }}</text>
+          </view>
+          <image class="news-image" src="{{ item.firstImage }}"></image>
+      </view>   
+    </view>  
+  </view>
+</scroll-view>
+  

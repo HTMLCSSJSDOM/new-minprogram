@@ -1,0 +1,21 @@
+.detail-wrapper{
+  width: 90%;
+  margin: 0 auto;
+}
+.detail-info{
+  display: flex;
+  margin: 30rpx 0;
+  align-items: center;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+.detail-date{
+  margin-left: 30rpx;
+}
+.detail-readCount{
+  flex-grow: 1;
+  text-align: right;
+}
+.detail-image{
+  width: 100%;
+}

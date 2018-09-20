@@ -1,0 +1,13 @@
+<!--pages/list/list.wxml-->
+<view class="detail-wrapper">
+  <view class="detail-title">{{ detailList.title }}</view>
+  <view class="detail-info">
+      <view class="detail-source">{{ detailList.source || '央视网' }}</view>
+      <view class="detail-date">{{ detailList.date }}</view>
+      <view class="detail-readCount">阅读量{{detailList.readCount }}</view>
+  </view>
+  <image class="detail-image" src="{{ detailList.firstImage }}"></image>
+  <view class="detail-content-top">{{ detailList.content[0].text }}</view>
+  
+  <view class="detail-content-bottom">{{ detailList.content[1].text }}</view>
+</view>
