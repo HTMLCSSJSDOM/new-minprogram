@@ -1,5 +1,5 @@
 .detail-wrapper{
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 }
 .detail-info{
@@ -16,6 +16,16 @@
   flex-grow: 1;
   text-align: right;
 }
+.detail-text{
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
 .detail-image{
   width: 100%;
+}
+.right{
+  text-align: right;
+}
+.detail-text{
+  text-indent: 20rpx;
 }

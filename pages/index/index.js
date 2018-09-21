@@ -40,27 +40,34 @@ Page({
   },
   onLoad(){
     this.getNews()
-
+    // 监听网络状态
+    wx.onNetworkStatusChange(function (res) {
+      if(res.networkType === 'none'){
+        wx.showToast({
+          title: `网络状态异常`,
+          image: '/images/error.png',
+        })
+      }
+    })
   },
-  getNews(){
+  getNews(callback){
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       data: {
         type: this.data.category
       },
-      success: (res) => {
-     
+      success: res => {
         let result = res.data.result
         let first = result[0]
         let rest = result.slice(1)
         this.setNewsIcon(first)
         this.setNewsList(rest)
-        wx.setNavigationBarColor({
-          frontColor: '#ffffff',
-          backgroundColor: '#339ADD'
-        })
-        wx.setNavigationBarTitle({
-          title: '快读资讯'
+        callback && callback()
+      },
+      fail: res => {
+        wx.showToast({
+          title: '请求数据失败',
+          icon: 'none'
         })
       }
     })
@@ -89,5 +96,11 @@ Page({
     wx.navigateTo({
       url: `/pages/list/list?id=${id}`
     })
+  },
+  onPullDownRefresh(){
+    this.getNews( () => {
+      wx.stopPullDownRefresh()
+    })
+    
   }
 })

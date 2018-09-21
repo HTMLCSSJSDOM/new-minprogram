@@ -5,7 +5,8 @@
 <view class="top-wrapper">
   <view class="top-content">
     <view class="top-title">{{ topLineNew.title }}</view>
-    <text class="top-source">{{ topLineNew.source }}</text>
+    
+    <text class="top-source">{{ topLineNew.source || '央视网'}}</text>
     <text class="top-date">{{ topLineNew.date }}</text>
   </view>
   <image  class="top-image" src="{{ topLineNew.firstImage }}"></image>
@@ -21,7 +22,7 @@
               <text class="news-source">{{ item.source || '央视网'}}</text>
               <text class="news-date">{{ item.date }}</text>
           </view>
-          <image class="news-image" src="{{ item.firstImage }}"></image>
+          <image class="news-image" src="{{ item.firstImage || '/images/default.png'}}"></image>
       </view>   
     </view>  
   </view>

@@ -52,6 +52,7 @@
   font-size: 20rpx;
   line-height: 28rpx;
   opacity: 0.6;
+  margin-right: 30rpx;
 }
 .top-image{
   position: absolute;

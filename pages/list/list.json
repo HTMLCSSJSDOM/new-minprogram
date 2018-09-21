@@ -1,1 +1,7 @@
-{}
+{
+    "navigationBarBackgroundColor": "#339ADD",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "快读资讯",
+    "backgroundColor": "#339ADD",
+    "backgroundTextStyle": "light"
+     }

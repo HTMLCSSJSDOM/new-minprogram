@@ -6,8 +6,11 @@
       <view class="detail-date">{{ detailList.date }}</view>
       <view class="detail-readCount">阅读量{{detailList.readCount }}</view>
   </view>
-  <image class="detail-image" src="{{ detailList.firstImage }}"></image>
-  <view class="detail-content-top">{{ detailList.content[0].text }}</view>
+  <view class="detail-content">
+    <view class="detail-item" wx:for="{{ detailList.content }}">
+        <image class="detail-image" wx-if="{{ item.type === 'image' }}" src="{{ item.src }}"></image>
+        <view class="detail-text" wx-if="{{ item.type === 'p' }}">{{ item.text }}</view>
+      </view>
+  </view>
   
-  <view class="detail-content-bottom">{{ detailList.content[1].text }}</view>
 </view>
