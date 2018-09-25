@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+https://test-miniprogram.com/api/news/
 const CATAGORYLIST = [
   {
     title: '国内',
@@ -94,7 +95,7 @@ Page({
   onTapNewDetail(e){
     let id = e.currentTarget.id
     wx.navigateTo({
-      url: `/pages/list/list?id=${id}`
+      url: `/pages/detail/detail?id=${id}`
     })
   },
   onPullDownRefresh(){

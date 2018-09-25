@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="category-wrapper">
-  <view class="category-item" data-category="{{ item.mark }}" bindtap="onTapCategory"  wx:for="{{categoryList}}">{{ item.title }}</view>
+  <view class="category-item" data-category="{{ item.mark }}"  bindtap="onTapCategory"  wx:for="{{categoryList}}">{{ item.title }}</view>
 </view>
-<view class="top-wrapper">
+<navigator class="top-wrapper" url="/pages/detail/detail?id={{ topLineNew.id }}">
   <view class="top-content">
     <view class="top-title">{{ topLineNew.title }}</view>
     
@@ -10,7 +10,7 @@
     <text class="top-date">{{ topLineNew.date }}</text>
   </view>
   <image  class="top-image" src="{{ topLineNew.firstImage }}"></image>
-</view>
+</navigator>
   
 
 <scroll-view scroll-y>
